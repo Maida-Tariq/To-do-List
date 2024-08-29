@@ -2,6 +2,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const taskInput = document.getElementById('taskInput');
     const addTaskButton = document.getElementById('addTaskButton');
     const taskList = document.getElementById('taskList');
+    const emptyMessage = document.getElementById('emptyMessage');
+
+    function updateEmptyMessage() {
+        if (taskList.children.length === 0) {
+            emptyMessage.style.display = 'block';
+        } else {
+            emptyMessage.style.display = 'none';
+        }
+    }
 
     addTaskButton.addEventListener('click', () => {
         const taskText = taskInput.value.trim();
@@ -13,11 +22,15 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             taskList.appendChild(li);
             taskInput.value = '';
+            updateEmptyMessage();
 
             const removeButton = li.querySelector('button.remove-task');
             removeButton.addEventListener('click', () => {
                 li.remove();
+                updateEmptyMessage();
             });
         }
     });
+
+    updateEmptyMessage();
 });

@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stylish To-Do List</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
 <body>
     <div class="container">
-        <h1 class="title" data-aos="fade-down">To-Do List</h1>
         <div class="todo-app" data-aos="fade-up">
-            <input type="text" id="taskInput" placeholder="Add a new task...">
+            <h1 class="title" data-aos="fade-down">Your Task Journey</h1>
+            <input type="text" id="taskInput" placeholder="What's next on your list?">
             <button id="addTaskButton">Add Task</button>
-            <ul id="taskList">
+            <ul id="taskList" data-aos="fade-up">
                 <!-- List items will be dynamically added here -->
             </ul>
+            <div class="empty-message" id="emptyMessage">Your task list is empty. Start adding tasks to keep track of your progress!</div>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="scripts.js"></script>
+    <script src="js/scripts.js"></script>
     <script>
         AOS.init();
     </script>

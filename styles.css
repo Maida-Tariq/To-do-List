@@ -1,6 +1,6 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f7f9fc;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #d9e4f5);
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,18 +11,20 @@ body {
 
 .container {
     background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 350px;
+    width: 400px;
     max-width: 100%;
+    position: relative;
 }
 
 .title {
     text-align: center;
-    color: #333;
+    color: #3b3f5c;
     margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 28px;
+    font-weight: 600;
 }
 
 .todo-app {
@@ -31,25 +33,32 @@ body {
 }
 
 #taskInput {
-    padding: 12px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    margin-bottom: 10px;
+    padding: 14px;
+    border: 2px solid #d1d9e6;
+    border-radius: 10px;
+    margin-bottom: 12px;
     font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#taskInput:focus {
+    border-color: #6c7ae0;
 }
 
 #addTaskButton {
-    padding: 12px;
-    background-color: #5cb85c;
+    padding: 14px;
+    background-color: #6c7ae0;
     border: none;
     color: white;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s;
 }
 
 #addTaskButton:hover {
-    background-color: #4cae4c;
+    background-color: #5a6abf;
 }
 
 ul {
@@ -62,29 +71,38 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    transition: background-color 0.3s;
+    padding: 12px;
+    border-bottom: 1px solid #e0e4f1;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    background-color: #f9faff;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 li:hover {
-    background-color: #f0f0f0;
-}
-
-li:last-child {
-    border-bottom: none;
+    background-color: #e4e9f5;
+    transform: scale(1.02);
 }
 
 button.remove-task {
-    background-color: #d9534f;
+    background-color: #f76c6c;
     border: none;
     color: white;
     border-radius: 8px;
     padding: 6px 12px;
     cursor: pointer;
     font-size: 14px;
+    transition: background-color 0.3s;
 }
 
 button.remove-task:hover {
-    background-color: #c9302c;
+    background-color: #d64b4b;
+}
+
+.empty-message {
+    text-align: center;
+    color: #6c7ae0;
+    font-size: 16px;
+    margin-top: 20px;
+    display: none;
 }
